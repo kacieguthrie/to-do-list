@@ -12,8 +12,14 @@ function onReady() {
     // create a new li
     let newLi = document.createElement('li');
 
+    //add MDL class to li
+    newLi.classList.add('mdl-list__item')
+
     // create a new input
     let checkbox = document.createElement('input');
+
+    //add MDL to checkbox
+    checkbox.classList.add('mdl-checkbox', 'mdl-js-checkbox', 'mdl-js-ripple-effect')
 
     // set the input's type to checkbox
     checkbox.type = 'checkbox';
@@ -33,7 +39,10 @@ function onReady() {
     // create a delete button
     let deleteButton = document.createElement('button');
 
-    // set the input's type to delete button
+    //add MDL to delete button
+    deleteButton.classList.add("mdl-button");
+
+    // set the type to button
     deleteButton.type = 'button';
 
     // attach the delete button to the li
@@ -46,7 +55,6 @@ function onReady() {
       newLi.parentNode.removeChild(newLi);
     })
 
-    //end button
   });
 
 }
