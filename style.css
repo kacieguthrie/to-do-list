@@ -1,0 +1,21 @@
+body {
+  background-color: #EEE
+}
+
+.container {
+  width: 425px;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+form {
+  text-align: center;
+}
+
+li {
+  padding-left: 50px;
+}
