@@ -6,7 +6,7 @@ function onReady() {
       const newToDoText = document.getElementById('newToDoText');  //get the input
       if (!newToDoText.value) {return;}  //check that the input has a value
 
-      toDos.push({  //add the value of the input to the toDos array
+      toDos.push({  //add the value of the input to the toDos array (is this actualy an array or just an object?)
         title: newToDoText.value, //create a property called "title" and assign it a value of the value of the newToDo Text input
         complete: false //? what is this?
       });
@@ -32,12 +32,12 @@ function onReady() {
     });
   }
 
-  addToDoForm.addEventListener('submit',event => { //listen for the 'submit' event
+  addToDoForm.addEventListener('submit',event => { //listen for the 'submit' event (why curly brackets? are we defining an anon function?)
     event.preventDefault(); //prevent a new page from opening
     createNewToDo(); //run the function that adds the input to the array
   });
 
-  renderTheUI(); //why do we need to call this function again if we already called it a the end of createNewToDo?
+  renderTheUI(); //what is this doing? renderTheUI doesn't have any to-dos to display in the initial state. It seems like everything still works if I comment it out. 
 }
 window.onload = function () { //??
   onReady();
