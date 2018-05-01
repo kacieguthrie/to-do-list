@@ -1,16 +1,15 @@
 function onReady() {
   const toDos = [];  //define a varialbe that is an empty array
   const addToDoForm = document.getElementById('addToDoForm'); //get the form
-  let toDoId = 0;
+  let id = 0;
 
-  function  createNewToDo() {     //this function adds the input to the array (storing the data)
+  function  createNewToDo() {     //this function adds the input to the array (make a place to store the data)
       const newToDoText = document.getElementById('newToDoText');  //get the input
-      if (!newToDoText.value) {return;}  //check that the input has a value
+      if (!newToDoText.value) {return;}  //check that the input has a truthy value
 
       toDos.push({  //add the value of the input to the toDos array (is this actualy an array or just an object?)
         title: newToDoText.value, //create a property called "title" and assign it a value of the value of the newToDo Text input
-        complete: false //? what is this?
-        id: toDoId++; //assign a consecutive number to each new li (just like an array)?
+        id: id++, //assign a consecutive number to each new li (just like an array)?
       });
       newToDoText.value = ''; //clear the input
 
@@ -45,12 +44,12 @@ function onReady() {
   });
 
   deleteButton.addEventListener('click', event => {
-    toDos.filter(toDo.id === toDoId) // not sure what to do here, just a guess
-  })
+    let newToDos = toDos.filter(toDo => toDo.id !== id);
+  });
 
-  renderTheUI(); //what is this doing?
+  renderTheUI();
 }
-window.onload = function () { //??
+window.onload = function () {
   onReady();
 
 };
